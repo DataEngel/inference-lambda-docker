@@ -24,7 +24,7 @@ def lambda_handler(event, context):
     filename = "model_risk.joblib"
     s3_client.download_file(AWS_S3_BUCKET, filename, '/tmp/' + filename)   
 
-    values = a_dictionary[5008807].values()
+    values = a_dictionary["5008807"].values()
 
     values_list = list(values)
 
@@ -39,12 +39,12 @@ def lambda_handler(event, context):
 
 
 event = {
-    5008807 : { 
-        1 : 32, 
-        2 : 12, 
-        3 : 2, 
-        4 : 119, 
-        5 : 45
+    "5008807" : { 
+        "1" : 32, 
+        "2" : 12, 
+        "3" : 2, 
+        "4" : 119, 
+        "5" : 45
     }
 }
 
