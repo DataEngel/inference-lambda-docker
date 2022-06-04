@@ -38,7 +38,7 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to AWS lambda.
-        docker build [OPTIONS] PATH | URL | - \
+        docker build -t inference02 . \
            
             --build-arg AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}" \
             --build-arg AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}" \
