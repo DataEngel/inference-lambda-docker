@@ -52,3 +52,4 @@ event = {
 output = lambda_handler(event, context=None)
 
 print(output)
+
