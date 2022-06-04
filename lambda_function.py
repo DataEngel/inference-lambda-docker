@@ -34,7 +34,10 @@ def lambda_handler(event, context):
 
     prediction_result = my_model.predict(values_reshape)
 
-    return prediction_result
+    print("prediction_result: ", prediction_result)
+
+    return None
+    #return prediction_result
 
 
 
