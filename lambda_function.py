@@ -9,9 +9,7 @@ warnings.filterwarnings('ignore')
 
 def lambda_handler(event, context):
 
-    d = {
-        5008807: [65, 0, 1, 10000, 1]
-        }
+    payload = [[65, 0, 1, 10000, 1]] 
     
     AWS_S3_BUCKET = "engel-tests-20851"
     ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
@@ -27,7 +25,7 @@ def lambda_handler(event, context):
 
     my_model = load('/tmp/model_risk.joblib') 
 
-    prediction_result = my_model.predict([d[5008807]]) 
+    prediction_result = my_model.predict(payload) 
 
     print("prediction_result: ", prediction_result)
 
