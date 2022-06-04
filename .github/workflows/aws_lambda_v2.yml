@@ -15,7 +15,7 @@ jobs:
       ECR_IMAGE_TAG: latest
       AWS_DEFAULT_REGION: us-east-2
       AWS_LAMBDA_FUNC_NAME: inference-lambda-docker-01
-      AWS_ECR_REPOSITORY_NAME: inference03
+      AWS_ECR_REPOSITORY_NAME: inference02
 
     steps:
     - name: checkout
