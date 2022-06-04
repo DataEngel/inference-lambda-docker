@@ -1,0 +1,3 @@
+aws lambda update-function-code \
+  --function-name inference-lambda-docker-01 \
+  --image-uri "781211160608.dkr.ecr.us-east-2.amazonaws.com/inference02"
