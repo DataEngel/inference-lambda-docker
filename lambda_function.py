@@ -46,3 +46,4 @@ event_local_example = {
     }
 
 lambda_handler(event_local_example, context=None)
+
