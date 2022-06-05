@@ -2,9 +2,9 @@ name: AWS Lambda Deploy V2
 
 on:
   push:
-    branches: [ dev,  main ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ dev, main ]
+    branches: [ master, main ]
   workflow_dispatch:  # trigger manually
 
 jobs:
