@@ -2,7 +2,7 @@ import boto3
 import warnings
 import os
 
-from joblib import load 
+from joblib import load
 
 warnings.filterwarnings('ignore')
 
@@ -20,7 +20,7 @@ def lambda_handler(event, context):
     #SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
     
     s3_client = boto3.client(
-        "s3",
+        "s3"
         #aws_access_key_id=ACCESS_KEY_ID,
         #aws_secret_access_key=SECRET_ACCESS_KEY,
     )
@@ -31,9 +31,15 @@ def lambda_handler(event, context):
 
     prediction_result = my_model.predict([values_for_model]) 
 
-    print("prediction_result: ", prediction_result)
+    list_result = prediction_result.tolist() 
 
-    return None
+    list_final = list_result[0] 
+
+    output = {
+        "risk_prediction": list_final
+    }
+
+    return output
 
 event_local_example = {
     "5008807" : { 
@@ -45,4 +51,6 @@ event_local_example = {
         }
     }
 
-lambda_handler(event_local_example, context=None)
+result = lambda_handler(event_local_example, context=None)
+
+print(result)

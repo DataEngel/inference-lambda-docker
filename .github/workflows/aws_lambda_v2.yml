@@ -49,9 +49,9 @@ jobs:
     - name: Deploy to AWS Lambda
       run: |
         aws lambda update-function-code \
-        --function-name ${{ env.AWS_LAMBDA_FUNC_NAME }} \
-        --image-uri "${{ secrets.AWS_ECR_IMAGE_URI }}:${{ env.ECR_IMAGE_TAG }}"
+        --function-name inference-lambda-docker-function \
+        --image-uri 781211160608.dkr.ecr.us-east-2.amazonaws.com/inference-lambda-docker-ecr:latest
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_DEFAULT_REGION: ${{ env.AWS_DEFAULT_REGION }} 
+        AWS_DEFAULT_REGION: ${{ env.AWS_DEFAULT_REGION }}
