@@ -31,6 +31,7 @@ def lambda_handler(event, context):
 
     prediction_result = my_model.predict([values_for_model]) 
 
+    print("Success Prediction")
     print("prediction_result: ", prediction_result)
 
     return None
